@@ -224,7 +224,10 @@ class _LocationInputState extends State<LocationInput> {
   void onSelectMap() async {
     LatLng? pickedlocation = await Navigator.of(context).push<LatLng>(
         MaterialPageRoute(
-            builder: (ctx) => MapScreen(location: PlaceLocation(longitude: -122.07, latitude: 37.422, address: ""), isSelecting: true)));
+            builder: (ctx) => MapScreen(
+                location: PlaceLocation(
+                    longitude: -122.07, latitude: 37.422, address: ""),
+                isSelecting: true)));
 
     if (pickedlocation == null) {
       return;

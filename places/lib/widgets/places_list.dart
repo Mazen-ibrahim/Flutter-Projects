@@ -3,10 +3,22 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:places/Screens/places_details.dart';
 import 'package:places/providers/place_provider.dart';
 
-class PlacesList extends ConsumerWidget {
+class PlacesList extends ConsumerStatefulWidget {
   const PlacesList({super.key});
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<PlacesList> createState() => _PlacesListState();
+}
+
+class _PlacesListState extends ConsumerState<PlacesList> {
+  @override
+  void initState() {
+    super.initState();
+    ref.read(placeStateProvider.notifier).loadPlaces();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     if (ref.watch(placeStateProvider).isEmpty) {
       return Center(
         child: Text(
@@ -41,14 +53,13 @@ class PlacesList extends ConsumerWidget {
                   fontSize: 32,
                   color: Colors.white),
             ),
-            subtitle:Text(
+            subtitle: Text(
               ref.read(placeStateProvider)[index].location.address,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: Colors.white),
-            ), 
-
+            ),
           );
         },
       ),
