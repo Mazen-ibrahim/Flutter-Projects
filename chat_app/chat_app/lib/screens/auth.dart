@@ -16,7 +16,10 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          //image: DecorationImage(image: AssetImage('')),
+          image: DecorationImage(
+            image: AssetImage('images/Background2.png'),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Center(
           child: SingleChildScrollView(
@@ -30,9 +33,11 @@ class _AuthScreenState extends State<AuthScreen> {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Email Address',
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: 'Email Address',
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
+                              borderRadius: BorderRadius.circular(18),
                               borderSide: BorderSide.none,
                             ),
                             suffixIcon: Icon(Icons.email),
@@ -45,11 +50,14 @@ class _AuthScreenState extends State<AuthScreen> {
                         TextFormField(
                           obscureText: !visibilty,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: 'Password',
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
+                              borderRadius: BorderRadius.circular(18),
                               borderSide: BorderSide.none,
                             ),
+
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
