@@ -1,100 +1,99 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import '../data/dtb.dart';
 
 class AddFridge extends StatefulWidget {
-  AddFridge({super.key});
+  const AddFridge({super.key});
 
   @override
   State<AddFridge> createState() => _AddFridgeState();
 }
 
 class _AddFridgeState extends State<AddFridge> {
-  final TextEditingController fridgeid = TextEditingController();
+  final TextEditingController _fridgeid = TextEditingController();
 
-  final TextEditingController initialstatus = TextEditingController();
+  final TextEditingController _initialstatus = TextEditingController();
 
-  final TextEditingController mincabintemp = TextEditingController();
+  final TextEditingController _mincabintemp = TextEditingController();
 
-  final TextEditingController maxcabintemp = TextEditingController();
+  final TextEditingController _maxcabintemp = TextEditingController();
 
-  final TextEditingController minfreezertemp = TextEditingController();
+  final TextEditingController _minfreezertemp = TextEditingController();
 
-  final TextEditingController maxfreezertemp = TextEditingController();
+  final TextEditingController _maxfreezertemp = TextEditingController();
 
-  final TextEditingController mincabincurrent = TextEditingController();
+  final TextEditingController _mincabincurrent = TextEditingController();
 
-  final TextEditingController maxcabincurrent = TextEditingController();
+  final TextEditingController _maxcabincurrent = TextEditingController();
 
-  final TextEditingController minfreezercurrent = TextEditingController();
+  final TextEditingController _minfreezercurrent = TextEditingController();
 
-  final TextEditingController maxfreezercurrent = TextEditingController();
+  final TextEditingController _maxfreezercurrent = TextEditingController();
 
   void _addfridge() {
-    final String _fridgeid = fridgeid.text;
-    final String _initialstatus = initialstatus.text;
-    final double _mincabintemp = double.parse(mincabintemp.text);
-    final double _maxcabintemp = double.parse(maxcabintemp.text);
-    final double _minfreezertemp = double.parse(minfreezertemp.text);
-    final double _maxfreezertemp = double.parse(maxfreezertemp.text);
-    final double _mincabincurrent = double.parse(mincabincurrent.text);
-    final double _maxcabincurrent = double.parse(maxcabincurrent.text);
-    final double _minfreezercurrent = double.parse(minfreezercurrent.text);
-    final double _maxfreezercurrent = double.parse(maxfreezercurrent.text);
+    final String fridgeid = _fridgeid.text;
+    final String initialstatus = _initialstatus.text;
+    final double mincabintemp = double.parse(_mincabintemp.text);
+    final double maxcabintemp = double.parse(_maxcabintemp.text);
+    final double minfreezertemp = double.parse(_minfreezertemp.text);
+    final double maxfreezertemp = double.parse(_maxfreezertemp.text);
+    final double mincabincurrent = double.parse(_mincabincurrent.text);
+    final double maxcabincurrent = double.parse(_maxcabincurrent.text);
+    final double minfreezercurrent = double.parse(_minfreezercurrent.text);
+    final double maxfreezercurrent = double.parse(_maxfreezercurrent.text);
 
-    if (_fridgeid.isNotEmpty &&
-        _initialstatus.isNotEmpty &&
-        !_mincabintemp.isNaN &&
-        !_maxcabintemp.isNaN &&
-        !_minfreezertemp.isNaN &&
-        !_maxfreezertemp.isNaN &&
-        !_mincabincurrent.isNaN &&
-        !_maxcabincurrent.isNaN &&
-        !_minfreezercurrent.isNaN &&
-        !_maxfreezercurrent.isNaN) {
+    if (fridgeid.isNotEmpty &&
+        initialstatus.isNotEmpty &&
+        !mincabintemp.isNaN &&
+        !maxcabintemp.isNaN &&
+        !minfreezertemp.isNaN &&
+        !maxfreezertemp.isNaN &&
+        !mincabincurrent.isNaN &&
+        !maxcabincurrent.isNaN &&
+        !minfreezercurrent.isNaN &&
+        !maxfreezercurrent.isNaN) {
       bool checkcabintemp = true;
       bool checkcabincurrent = true;
       bool checkfreezertemp = true;
       bool checkfreezercurrent = true;
 
-      if (_mincabintemp > _maxcabintemp) {
+      if (mincabintemp > maxcabintemp) {
         checkcabintemp = false;
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text("Warning: Min Cabin Temp greater than Max Cabin Temp")));
       }
 
-      if (_mincabincurrent > _maxcabincurrent ||
-          _maxcabincurrent.isNegative ||
-          _mincabincurrent.isNegative) {
+      if (mincabincurrent > maxcabincurrent ||
+          maxcabincurrent.isNegative ||
+          mincabincurrent.isNegative) {
         checkcabincurrent = false;
-        if (_mincabincurrent > _maxcabincurrent) {
+        if (mincabincurrent > maxcabincurrent) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               content:
                   Text("Warning: Min Cabin Current greater than Max Cabin Current")));
-        } else if (_maxcabincurrent.isNegative || _mincabincurrent.isNegative) {
+        } else if (maxcabincurrent.isNegative || mincabincurrent.isNegative) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               content: Text(
                   "Warning: Cabin Current can't be a Negative Value in Both Field")));
         }
       }
 
-      if (_minfreezertemp > _maxfreezertemp) {
+      if (minfreezertemp > maxfreezertemp) {
         checkfreezertemp = false;
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text("Warning: Min Freezer Temp greater than Max Freezer Temp")));
       }
 
-      if (_minfreezercurrent > _maxfreezercurrent ||
-          _maxfreezercurrent.isNegative ||
-          _minfreezercurrent.isNegative) {
+      if (minfreezercurrent > maxfreezercurrent ||
+          maxfreezercurrent.isNegative ||
+          minfreezercurrent.isNegative) {
         checkfreezercurrent = false;
-        if (_minfreezercurrent > _maxfreezercurrent) {
+        if (minfreezercurrent > maxfreezercurrent) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               content: Text(
                   "Warning: Min Freezer Current greater than Max Freezer Current")));
-        } else if (_maxfreezercurrent.isNegative ||
-            _minfreezercurrent.isNegative) {
+        } else if (maxfreezercurrent.isNegative ||
+            minfreezercurrent.isNegative) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               content: Text(
                   "Warning: Freezer Current can't be a Negative Value in Both Field")));
@@ -106,31 +105,31 @@ class _AddFridgeState extends State<AddFridge> {
           checkfreezertemp &&
           checkfreezercurrent) {
         DataBase.addFridge(
-            id: _fridgeid,
-            status: _initialstatus,
-            cabinTemp: _mincabintemp,
-            cabinCurrent: _mincabincurrent,
-            freezerTemp: _minfreezertemp,
-            freezerCurrent: _minfreezercurrent,
-            mincabincurrent: _mincabincurrent,
-            maxcabincurrent: _maxcabincurrent,
-            mincabintemp: _mincabintemp,
-            maxcabintemp: _maxcabintemp,
-            minfreezercurrent: _minfreezercurrent,
-            maxfreezercurrent: _maxfreezercurrent,
-            minfreezertemp: _minfreezertemp,
-            maxfreezertemp: _maxfreezertemp);
+            id: fridgeid,
+            status: initialstatus,
+            cabinTemp: mincabintemp,
+            cabinCurrent: mincabincurrent,
+            freezerTemp: minfreezertemp,
+            freezerCurrent: minfreezercurrent,
+            mincabincurrent: mincabincurrent,
+            maxcabincurrent: maxcabincurrent,
+            mincabintemp: mincabintemp,
+            maxcabintemp: maxcabintemp,
+            minfreezercurrent: minfreezercurrent,
+            maxfreezercurrent: maxfreezercurrent,
+            minfreezertemp: minfreezertemp,
+            maxfreezertemp: maxfreezertemp);
 
-        fridgeid.text = "";
-        initialstatus.text = "";
-        mincabintemp.text = "";
-        maxcabintemp.text = "";
-        minfreezertemp.text = "";
-        maxfreezertemp.text = "";
-        mincabincurrent.text = "";
-        maxcabincurrent.text = "";
-        minfreezercurrent.text = "";
-        maxfreezercurrent.text = "";
+        _fridgeid.text = "";
+        _initialstatus.text = "";
+        _mincabintemp.text = "";
+        _maxcabintemp.text = "";
+        _minfreezertemp.text = "";
+        _maxfreezertemp.text = "";
+        _mincabincurrent.text = "";
+        _maxcabincurrent.text = "";
+        _minfreezercurrent.text = "";
+        _maxfreezercurrent.text = "";
 
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Fridge Added Successfully")));
@@ -142,31 +141,31 @@ class _AddFridgeState extends State<AddFridge> {
   }
 
   void _cleardata() {
-    fridgeid.text = "";
-    initialstatus.text = "";
-    mincabintemp.text = "";
-    maxcabintemp.text = "";
-    minfreezertemp.text = "";
-    maxfreezertemp.text = "";
-    mincabincurrent.text = "";
-    maxcabincurrent.text = "";
-    minfreezercurrent.text = "";
-    maxfreezercurrent.text = "";
+    _fridgeid.text = "";
+    _initialstatus.text = "";
+    _mincabintemp.text = "";
+    _maxcabintemp.text = "";
+    _minfreezertemp.text = "";
+    _maxfreezertemp.text = "";
+    _mincabincurrent.text = "";
+    _maxcabincurrent.text = "";
+    _minfreezercurrent.text = "";
+   _maxfreezercurrent.text = "";
   }
 
   @override
   void dispose() {
     super.dispose();
-    fridgeid.dispose();
-    initialstatus.dispose();
-    mincabintemp.dispose();
-    maxcabintemp.dispose();
-    mincabincurrent.dispose();
-    maxcabincurrent.dispose();
-    minfreezertemp.dispose();
-    maxfreezertemp.dispose();
-    minfreezercurrent.dispose();
-    maxfreezercurrent.dispose();
+    _fridgeid.dispose();
+    _initialstatus.dispose();
+    _mincabintemp.dispose();
+    _maxcabintemp.dispose();
+    _mincabincurrent.dispose();
+    _maxcabincurrent.dispose();
+    _minfreezertemp.dispose();
+    _maxfreezertemp.dispose();
+    _minfreezercurrent.dispose();
+    _maxfreezercurrent.dispose();
   }
 
   @override
@@ -201,7 +200,7 @@ class _AddFridgeState extends State<AddFridge> {
                 SizedBox(
                   width: 300,
                   child: TextField(
-                    controller: fridgeid,
+                    controller: _fridgeid,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -219,7 +218,7 @@ class _AddFridgeState extends State<AddFridge> {
                 SizedBox(
                   width: 300,
                   child: TextField(
-                    controller: initialstatus,
+                    controller: _initialstatus,
                     maxLength: 8,
                     decoration: InputDecoration(
                       filled: true,
@@ -256,7 +255,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: mincabintemp,
+                        controller: _mincabintemp,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,
@@ -275,7 +274,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: maxcabintemp,
+                        controller: _maxcabintemp,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,
@@ -294,7 +293,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: mincabincurrent,
+                        controller: _mincabincurrent,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,
@@ -313,7 +312,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: maxcabincurrent,
+                        controller: _maxcabincurrent,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,
@@ -348,7 +347,7 @@ class _AddFridgeState extends State<AddFridge> {
                       width: 300,
                       child: TextField(
                         maxLength: 3,
-                        controller: minfreezertemp,
+                        controller: _minfreezertemp,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -366,7 +365,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: maxfreezertemp,
+                        controller: _maxfreezertemp,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,
@@ -385,7 +384,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: minfreezercurrent,
+                        controller: _minfreezercurrent,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,
@@ -404,7 +403,7 @@ class _AddFridgeState extends State<AddFridge> {
                     SizedBox(
                       width: 300,
                       child: TextField(
-                        controller: maxfreezercurrent,
+                        controller: _maxfreezercurrent,
                         maxLength: 3,
                         decoration: InputDecoration(
                           filled: true,

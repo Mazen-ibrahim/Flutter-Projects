@@ -3,7 +3,6 @@ import 'package:smart_fridge_monitoring/data/users.dart';
 import 'package:smart_fridge_monitoring/widgets/add_account.dart';
 import 'package:smart_fridge_monitoring/widgets/add_fridge.dart';
 import 'package:smart_fridge_monitoring/widgets/dashboardpage.dart';
-import 'package:smart_fridge_monitoring/widgets/remove_account.dart';
 
 class OptionsPage extends StatefulWidget {
   const OptionsPage({super.key});
