@@ -25,7 +25,7 @@ The app visualizes **temperature** and **current data** of the **cabin** and **f
 ![Dashboard](images/Dashboard.png)
 
 ### Add Fridge  
-![Add Fridge](screenshots/Add Fridge.png)
+![Add Fridge](images/Add Fridge.png)
 
 ### Add Account  
-![Add Account](screenshots/Add_Account.png)
+![Add Account](images/Add_Account.png)
