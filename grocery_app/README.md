@@ -1,16 +1,25 @@
-# shop_app
+# 🛒 Grocery App
 
-A new Flutter project.
+A simple Flutter app to manage groceries efficiently.  
+The app provides a **Dashboard** to view items, an **Add Item** screen to insert new groceries, and an **Analysis** screen for insights.
 
-## Getting Started
+## Demo Video: https://drive.google.com/drive/folders/1FKB2pQNArFzEVcoj83yb_EEcaXDUreYE?usp=drive_link
 
-This project is a starting point for a Flutter application.
+## ✨ Features
+- 📊 **Dashboard** – View all grocery items in one place.
+- ➕ **Add Item** – Quickly add new grocery items with details.
+- 📈 **Analysis Screen** – Visualize consumption and track grocery trends.
+- 🎨 Clean & simple UI with Flutter.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Dashboard Screen
+![Dashboard Screen](images/Dashboard.png)
+
+### Add Item  Screen
+![Add_Item](images/Add_Item.png)
+
+
+### Analysis Screen
+![Analysis Screen](images/AnalysisPage.png)
