@@ -6,10 +6,10 @@ The app provides a **Dashboard** to view items, an **Add Item** screen to insert
 ## Demo Video: https://drive.google.com/drive/folders/1FKB2pQNArFzEVcoj83yb_EEcaXDUreYE?usp=drive_link
 
 ## ✨ Features
- **Dashboard** – View all grocery items in one place.
- **Add Item** – Quickly add new grocery items with details.
- **Analysis Screen** – Visualize consumption and track grocery trends.
-
+- 📊 **Dashboard** – View all grocery items in one place.
+- ➕ **Add Item** – Quickly add new grocery items with details.
+- 📈 **Analysis Screen** – Visualize consumption and track grocery trends.
+- 🎨 Clean & simple UI with Flutter.
 
 
 ## Screenshots
