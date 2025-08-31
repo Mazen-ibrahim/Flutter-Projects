@@ -3,7 +3,8 @@
 A simple Flutter app to manage groceries efficiently.  
 The app provides a **Dashboard** to view items, an **Add Item** screen to insert new groceries, and an **Analysis** screen for insights.
 
-## Demo Video: https://drive.google.com/drive/folders/1FKB2pQNArFzEVcoj83yb_EEcaXDUreYE?usp=drive_link
+## 🎥 Demo
+👉 [Watch Demo Video](https://drive.google.com/file/d/1PCRkNEQZH8e46r_DQv0bjfddVJLIwfLd/view?usp=drive_link)
 
 ## ✨ Features
 - 📊 **Dashboard** – View all grocery items in one place.
