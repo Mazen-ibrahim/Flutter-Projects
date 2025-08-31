@@ -15,7 +15,7 @@ A **Flutter-based application** that allows users to save and manage memorable p
 ## 📸 Screenshots
 
 ### Home Screen 
-![Home Screen](images/Dashboard.png)
+![Home Screen](images/places.jpg)
 
 ### Add Place
-![Add Place](images/AddFridge.png)
+![Add Place](images/Add_Place.jpg)
