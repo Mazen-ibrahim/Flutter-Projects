@@ -145,4 +145,4 @@ UI updates automatically whenever the task list changes --- no manual setState c
 **Mazen Ibrahim Abdelmaguid Kandil**\
 🎓 Software Engineer  
 📧 ibrahimmazen945@gmail.com\
-💼 [LinkedIn Profile](https://www.linkedin.com/in/mazenibrahim)
+💼 [LinkedIn Profile](www.linkedin.com/in/mazen-ibrahim-ab4285191)
