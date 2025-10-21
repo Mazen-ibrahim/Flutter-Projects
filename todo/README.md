@@ -1,4 +1,4 @@
-# To-Do App --- Flutter Task Manager
+# To-Do App 
 
 A modern and responsive **Task Management App** built with **Flutter**and **GetX** for state management.This app helps users easily organize their daily tasks with reminders, themes, and an intuitive UI.
 
