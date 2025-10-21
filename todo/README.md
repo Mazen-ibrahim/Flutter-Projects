@@ -139,10 +139,3 @@ UI updates automatically whenever the task list changes --- no manual setState c
 -   Search and filter functionality
 
 ------------------------------------------------------------------------
-
-## 👨‍💻 Author
-
-**Mazen Ibrahim Abdelmaguid Kandil**\
-🎓 Software Engineer  
-📧 ibrahimmazen945@gmail.com\
-💼 [LinkedIn Profile](www.linkedin.com/in/mazen-ibrahim-ab4285191)
