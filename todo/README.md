@@ -111,8 +111,8 @@ UI updates automatically whenever the task list changes --- no manual setState c
 
 ##  UI Preview 
 
-![Light Mode](images/Dashboard(light).jpg)
-![Dark Mode](images/Dashboard(Dark).jpg)
+![Light Mode](images/Dashboard(light).jpg)    ![Dark Mode](images/Dashboard(Dark).jpg)
+
 ![Add Task](images/AddItem(Dark).jpg)
 ![Show Task](images/ShowTask(4).jpg)
 
