@@ -4,6 +4,11 @@ A modern and responsive **Task Management App** built with **Flutter**and **GetX
 
 ------------------------------------------------------------------------
 
+## Demo
+[Watch Demo Video](https://drive.google.com/file/d/1mA4eE4Tr2SPAlEKWHmNUTrKsBrK8XGI4/view?usp=sharing)
+
+------------------------------------------------------------------------
+
 ## Features
 
 **Add, Edit & Delete Tasks**
